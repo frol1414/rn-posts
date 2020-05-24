@@ -13,16 +13,16 @@ export const MainScreen = ({ navigation }) => {
   
 }
 
-MainScreen.navigationOptions = {
+MainScreen.navigationOptions = ({navigation}) => ({
   headerTitle: 'Мой блог', 
   headerRight: () => (
     <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
-      <Item title="Take foto" iconName="ios-camera" onPress={() => console.log(1)}/>
+      <Item title="Take foto" iconName="ios-camera" onPress={() => navigation.push('Create')}/>
     </HeaderButtons>
   ),
   headerLeft: () => (
     <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
-      <Item title="Toggle Drawer" iconName="ios-menu" onPress={() => console.log(1)}/>
+      <Item title="Toggle Drawer" iconName="ios-menu" onPress={() => navigation.toggleDrawer()}/>
     </HeaderButtons>
   )
-}
+})
